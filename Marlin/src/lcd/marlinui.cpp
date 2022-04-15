@@ -653,7 +653,7 @@ constexpr uint8_t epps = ENCODER_PULSES_PER_STEP;
       else if ((old_frm < 100 && new_frm > 100) || (old_frm > 100 && new_frm < 100))
         new_frm = 100;
 
-      LIMIT(new_frm, 10, 999);
+      LIMIT(new_frm, 1, 999);
 
       if (old_frm != new_frm) {
         feedrate_percentage = new_frm;

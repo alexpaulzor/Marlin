@@ -112,7 +112,7 @@ void menu_tune() {
   //
   // Speed:
   //
-  EDIT_ITEM(int3, MSG_SPEED, &feedrate_percentage, 10, 999);
+  EDIT_ITEM(int3, MSG_SPEED, &feedrate_percentage, 1, 999);
 
   //
   // Manual bed leveling, Bed Z:
@@ -196,11 +196,11 @@ void menu_tune() {
   // Flow:
   //
   #if HAS_EXTRUDERS
-    EDIT_ITEM(int3, MSG_FLOW, &planner.flow_percentage[active_extruder], 10, 999, []{ planner.refresh_e_factor(active_extruder); });
+    EDIT_ITEM(int3, MSG_FLOW, &planner.flow_percentage[active_extruder], 1, 999, []{ planner.refresh_e_factor(active_extruder); });
     // Flow En:
     #if HAS_MULTI_EXTRUDER
       LOOP_L_N(n, EXTRUDERS)
-        EDIT_ITEM_N(int3, n, MSG_FLOW_N, &planner.flow_percentage[n], 10, 999, []{ planner.refresh_e_factor(MenuItemBase::itemIndex); });
+        EDIT_ITEM_N(int3, n, MSG_FLOW_N, &planner.flow_percentage[n], 1, 999, []{ planner.refresh_e_factor(MenuItemBase::itemIndex); });
     #endif
   #endif
 

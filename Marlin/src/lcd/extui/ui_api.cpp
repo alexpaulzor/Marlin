@@ -1032,7 +1032,7 @@ namespace ExtUI {
     #endif
   }
 
-  void setFeedrate_percent(const_float_t value) { feedrate_percentage = constrain(value, 10, 500); }
+  void setFeedrate_percent(const_float_t value) { feedrate_percentage = constrain(value, 1, 500); }
 
   void coolDown() { thermalManager.cooldown(); }
 
